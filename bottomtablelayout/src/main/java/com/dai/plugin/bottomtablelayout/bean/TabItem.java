@@ -9,11 +9,11 @@ import android.view.View;
 
 public class TabItem extends View {
 
-    public final CharSequence mText;
-    public final Drawable mIcon;
-    public final String mSelectedIconUrl;
-    public final String mUnSelectedIconUrl;
-    public final int mCustomLayout;
+    public CharSequence mText;
+    public Drawable mIcon;
+    public String mSelectedIconUrl;
+    public String mUnSelectedIconUrl;
+    public int mCustomLayout;
 
     public TabItem(Context context) {
         this(context, null);

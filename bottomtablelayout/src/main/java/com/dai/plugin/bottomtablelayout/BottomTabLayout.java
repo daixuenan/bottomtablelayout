@@ -57,6 +57,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 import static android.support.v4.view.ViewPager.SCROLL_STATE_DRAGGING;
@@ -2182,5 +2183,19 @@ public class BottomTabLayout extends HorizontalScrollView {
 
     public ArrayList<Tab> getmTabs() {
         return mTabs;
+    }
+
+    public void setData(List<TabItem> tabItems) {
+        for (BottomTabLayout.Tab tab : getmTabs()) {
+            int postion = getmTabs().indexOf(tab);
+            if (postion < tabItems.size()) {
+                TabItem tabItem = tabItems.get(postion);
+                tab.selectedUrl = tabItem.mSelectedIconUrl;
+                tab.unSelectedUrl = tabItem.mUnSelectedIconUrl;
+                tab.mText = tabItem.mText;
+                tab.mIcon = tabItem.mIcon;
+            }
+        }
+        updateAllTabs();
     }
 }
