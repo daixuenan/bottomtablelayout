@@ -165,20 +165,6 @@ public class PageFragmentAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragmentList.size();
     }
-
-    public void refresh(List<Fragment> fragmentList) {
-        if (fragmentList == null) {
-            fragmentList = new ArrayList<>();
-        }
-        this.fragmentList = fragmentList;
-        notifyDataSetChanged();
-    }
-
-    public boolean onBackPressed() {
-        boolean isBack = true;
-        return isBack;
-    }
-}
 ```
 
 跑一下就可以了。
